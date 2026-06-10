@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(0 0% 8%);
+  --color-muted: hsl(0 0% 96%);
+  --color-muted-foreground: hsl(0 0% 40%);
+  --color-border: hsl(0 0% 90%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(0 0% 8%);
+  --color-accent: hsl(346 80% 52%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-warning: hsl(38 92% 42%);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --color-background: hsl(0 0% 100%);
+    --color-foreground: hsl(0 0% 8%);
+    --color-muted: hsl(0 0% 96%);
+    --color-muted-foreground: hsl(0 0% 40%);
+    --color-border: hsl(0 0% 90%);
+    --color-card: hsl(0 0% 100%);
+    --color-card-foreground: hsl(0 0% 8%);
+    --color-accent: hsl(346 80% 52%);
+    --color-accent-foreground: hsl(0 0% 100%);
+    --color-warning: hsl(38 92% 42%);
+  }
+
+  .dark {
+    --color-background: hsl(0 0% 6%);
+    --color-foreground: hsl(0 0% 98%);
+    --color-muted: hsl(0 0% 10%);
+    --color-muted-foreground: hsl(0 0% 64%);
+    --color-border: hsl(0 0% 16%);
+    --color-card: hsl(0 0% 8%);
+    --color-card-foreground: hsl(0 0% 98%);
+    --color-accent: hsl(348 60% 48%);
+    --color-accent-foreground: hsl(0 0% 100%);
+    --color-warning: hsl(38 92% 50%);
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-foreground);
+  }
+}
